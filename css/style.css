@@ -1,0 +1,114 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, del, dfn, em, img, ins, kbd, q, samp, small, strong, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, footer, header, nav, section {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+}
+body {
+  -webkit-text-size-adjust:none;
+  font-family:sans-serif;
+  background-color: #272727;
+}
+#slideshow {
+	width:1000px;
+	background-color: #272727;
+}
+.slider_pager_box {
+width: 1000px;
+margin: 0 auto;
+border-bottom: 1px #30373C solid;
+height: 50px;
+position:absolute;
+bottom:0;
+}
+.slider_pager_box a:hover, .slider_pager_box a:active {
+outline: none;
+text-decoration:none;
+}
+.slider_pager_box .prev_box {
+float: left;
+display: block;
+height: 50px;
+width: 64px;
+}
+.slider_pager_box .next_box {
+float: right;
+display: block;
+height: 50px;
+width: 64px;
+}
+.slider_pager_box .prev {
+display: block;
+height: 50px;
+cursor:pointer;
+border-right: 1px #30373C solid;
+border-left: 1px solid #30373C;
+}
+.slider_pager_box .next {
+display: block;
+height: 50px;
+cursor:pointer;
+border-left: 1px #30373C solid;
+border-right: 1px solid #30373C;
+}
+.hide {
+display: none;
+visibility: hidden;
+}
+#bullets {
+float: left;
+width: 872px;
+height: 38px;
+text-align: center;
+line-height: 49px;
+}
+#bullets li {
+display: inline-block;
+background: url("../images/bullets.png") right center no-repeat;
+width: 30px;
+height: 49px;
+}
+#bullets li.on {
+background-position: left center;
+width: 30px;
+height: 49px;
+}
+.prev em {
+display: block;
+padding: 16px 13px 8px;
+font-style: normal;
+font-weight: bold;
+font-size: 12px;
+text-transform: uppercase;
+color: #AC8DC0;
+letter-spacing: 1px;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, .35);
+}
+.next em {
+display: block;
+padding: 16px 13px 8px;
+font-style: normal;
+font-weight: bold;
+font-size: 12px;
+text-transform: uppercase;
+color: #AC8DC0;
+letter-spacing: 1px;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, .35);
+}
+#loadingMsg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	color:#ffffff;
+	width: 100%;
+	text-align: center;
+	z-index: 2000;
+	background: rgba(0, 0, 0, 1);
+	min-height: 1000px;
+}
+#loadingMsgContainer{
+	padding-top:20%;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>iPicture first demo</title>
+<link rel="stylesheet" type="text/css" media="screen" href="css/iPicture.css"/>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<!-- <script type="text/javascript" src="js/zepto.min-1.0.js"></script> -->
+<script type="text/javascript" src="js/jquery.ipicture.js"></script>
+<!-- <script type="text/javascript" src="js/zepto.ipicture.min.js"></script> -->
+<style type="text/css">
+html, p, h1 {margin: 0; padding: 0;}
+#iPicture{overflow-x: hidden;
+    overflow-y: visible;}
+body{
+  background-color: #393737;
+  color: #ffffff;
+}
+.titolo {
+	font-family: verdana;
+    width: 750px;
+    font-size: 10em;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0px 1px 1px #adadad,
+                 0px 2px 1px #c1c1c1,
+                 0px 3px 1px #bbb,
+                 0px 4px 1px #b5b5b5,
+                 0px 5px 1px #b1b1b1,
+                 0px 6px 1px #aaa,
+                 0px 7px 1px #555,
+                 0px 8px 3px rgba(100, 100, 100, 0.4),
+                 0px 9px 5px rgba(100, 100, 100, 0.1),
+                 0px 10px 7px rgba(100, 100, 100, 0.15),
+                 0px 11px 9px rgba(100, 100, 100, 0.2),
+                 0px 12px 11px rgba(100, 100, 100, 0.25),
+                 0px 13px 15px rgba(100, 100, 100, 0.3);
+}
+</style>
+
+<script type="text/javascript">
+window.onload=function(){
+	$( "#iPicture" ).iPicture();
+};
+
+</script>
+
+</head>
+<body>
+	<div id="pageContainer">
+		<h1 class="titolo">iPicture&sup2;</h1>
+		<div id="slideshow">
+	    	<div id="iPicture" data-interaction="hover">
+				<div class="ip_slide">
+					<img class="tooltipImg" id="picture1" src="images/kitchen/christmas.jpg" />
+					<div class="ip_tooltip ip_bg24" style="top: 185px; left: 403px;" data-animationtype="btt-slide" data-round="roundBgW" data-button="ipic-orange" data-tooltipbg="bgblack">
+						<p>Bottom-to-top tooltip embedding a video</p>
+<!-- 						<iframe width="360" height="215" src="http://www.youtube.com/embed/0dS5L7zHv74?wmode=transparent" frameborder="0" allowfullscreen></iframe> -->
+					</div>
+					<div class="ip_tooltip ip_img32" style="top: 361px; left: 156px;" data-animationtype="ttb-slide" data-round="roundBgW" data-button="moreblack" data-tooltipbg="bgblack">
+						<p>Top-to-bottom tooltip<br>
+						<a href="http://www.google.com">I'm a link</a></p>
+					</div>
+					<div class="ip_tooltip ip_img32" style="top: 406px; left: 583px;" data-animationtype="ltr-slide" data-round="roundBgB" data-button="moregold" data-tooltipbg="bgblack">
+						<p>Left-to-right tooltip containing an image</p>
+						<img alt="an image" src="http://ipicture.justmybit.com/images/icons/sofamod.png" />
+					</div>
+					<div class="ip_tooltip ip_img32" style="top: 61px; left: 656px;" data-animationtype="rtl-slide" data-round="roundBgW" data-button="moregold" data-tooltipbg="bgblack">
+						<p>Right-to-left tooltip</p>
+						<div class="fb-facepile" data-href="https://www.facebook.com/pages/IPcture-jQuery-Plugin/110085059109702" data-max-rows="1" data-width="250" data-colorscheme="dark"></div>
+					</div>
+				</div>
+				<div class="ip_slide">
+					<img class="tooltipImg" src="images/kitchen/kitchen.jpg">
+					<div class="ip_tooltip ip_bg24" style="top: 185px; left: 403px;" data-animationtype="rtl-slide" data-round="roundBgW" data-button="orange" data-tooltipbg="bgblack">
+		<!-- 				<iframe width="360" height="215" src="http://www.youtube.com/embed/0dS5L7zHv74?wmode=transparent" frameborder="0" allowfullscreen></iframe> -->
+					</div>
+					<div class="ip_tooltip ip_img32" style="top: 406px; left: 583px;" data-animationtype="ltr-slide" data-round="roundBg" data-button="moreblack" data-tooltipbg="bgblack">
+						<h1>rthtu</h1>
+						<p>vgjfjjhj cghgfjfgj  gjfgj.</p>
+						<p>gjfjfg gtfftutvgtdc gjcjchjc gjr6!</p>
+						<p>uruttrtutm   bvbjfy!</p>
+					</div>
+					<div class="ip_tooltip ip_img32" style="top: 461px; left: 556px;" data-animationtype="rtl-slide" data-round="roundBg" data-button="moregold" data-tooltipbg="bgblack">
+						<p>silver candle: 2.99$</p>
+					</div>
+				</div>
+				<div class="ip_slide">
+					<img class="tooltipImg" id="picture1" src="images/kitchen/kitchen2.jpg">
+					<div class="ip_tooltip ip_bg24" style="top: 185px; left: 403px;" data-animationtype="rtl-slide" data-round="roundBg" data-button="orange" data-tooltipbg="bgblack">
+		<!-- 				<iframe width="360" height="215" src="http://www.youtube.com/embed/0dS5L7zHv74?wmode=transparent" frameborder="0" allowfullscreen></iframe> -->
+					</div>
+					<div class="ip_tooltip ip_img32" style="top: 406px; left: 583px;" data-animationtype="ltr-slide" data-round="roundBg" data-button="moreblack" data-tooltipbg="bgblack">
+						<h1>rthtu</h1>
+						<p>vgjfjjhj cghgfjfgj  gjfgj.</p>
+						<p>gjfjfg gtfftutvgtdc gjcjchjc gjr6!</p>
+						<p>uruttrtutm   bvbjfy!</p>
+					</div>
+					<div class="ip_tooltip ip_img32" style="top: 461px; left: 556px;" data-animationtype="rtl-slide" data-round="roundBg" data-button="moregold" data-tooltipbg="bgblack">
+						<p>silver candle: 2.99$</p>
+					</div>
+				</div>
+				<div class="ip_slide">
+					<img class="tooltipImg" id="picture1" src="images/kitchen/kitchen3.jpg">
+					<div class="ip_tooltip ip_bg24" style="top: 185px; left: 403px;" data-animationtype="rtl-slide" data-round="roundBg" data-button="orange" data-tooltipbg="bgblack">
+		<!-- 				<iframe width="360" height="215" src="http://www.youtube.com/embed/0dS5L7zHv74?wmode=transparent" frameborder="0" allowfullscreen></iframe> -->
+					</div>
+					<div class="ip_tooltip ip_img32" style="top: 406px; left: 583px;" data-animationtype="ltr-slide" data-round="roundBg" data-button="moreblack" data-tooltipbg="bgblack">
+						<h1>rthtu</h1>
+						<p>vgjfjjhj cghgfjfgj  gjfgj.</p>
+						<p>gjfjfg gtfftutvgtdc gjcjchjc gjr6!</p>
+						<p>uruttrtutm   bvbjfy!</p>
+					</div>
+					<div class="ip_tooltip ip_img32" style="top: 461px; left: 556px;" data-animationtype="rtl-slide" data-round="roundBg" data-button="moregold" data-tooltipbg="bgblack">
+						<p>silver candle: 2.99$</p>
+					</div>
+				</div>
+				<div class="ip_slide">
+					<img class="tooltipImg" id="picture1" src="images/kitchen/bedroom.jpg">
+					<div class="ip_tooltip ip_bg24" style="top: 185px; left: 403px;" data-animationtype="rtl-slide" data-round="roundBg" data-button="orange" data-tooltipbg="bgblack">
+		<!-- 				<iframe width="360" height="215" src="http://www.youtube.com/embed/0dS5L7zHv74?wmode=transparent" frameborder="0" allowfullscreen></iframe> -->
+					</div>
+					<div class="ip_tooltip ip_img32" style="top: 406px; left: 583px;" data-animationtype="ltr-slide" data-round="roundBg" data-button="moreblack" data-tooltipbg="bgblack">
+						<h1>rthtu</h1>
+						<p>vgjfjjhj cghgfjfgj  gjfgj.</p>
+						<p>gjfjfg gtfftutvgtdc gjcjchjc gjr6!</p>
+						<p>uruttrtutm   bvbjfy!</p>
+					</div>
+					<div class="ip_tooltip ip_img32" style="top: 461px; left: 556px;" data-animationtype="rtl-slide" data-round="roundBg" data-button="moregold" data-tooltipbg="bgblack">
+						<p>silver candle: 2.99$</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="fb-root"></div>
+	<script>
+// 	(function(d, s, id) {
+// 	  var js, fjs = d.getElementsByTagName(s)[0];
+// 	  if (d.getElementById(id)) return;
+// 	  js = d.createElement(s); js.id = id;
+// 	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=180210495410376";
+// 	  fjs.parentNode.insertBefore(js, fjs);
+// 	}(document, 'script', 'facebook-jssdk'));
+	</script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>iPicture first demo</title>
+<link rel="stylesheet" type="text/css" media="screen" href="css/eggplant/jquery-ui-1.9.2.custom.min.css"/>
+<link rel="stylesheet" type="text/css" media="screen" href="css/iPicture.css"/>
+<link rel="stylesheet" type="text/css" media="screen" href="css/ipic-init.css"/>
+
+<link rel="stylesheet" href="lib/codemirror.css">
+
+<!-- jQuery & jQuery UI libs -->
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
+
+<!-- iPicture initialization lib -->
+<script type="text/javascript" src="js/init-plugin.js"></script>
+<!-- Code Mirror libs -->
+<script src="lib/codemirror.js"></script>
+<script src="mode/htmlmixed/htmlmixed.js"></script>
+<script src="mode/xml/xml.js"></script>
+<script src="mode/javascript/javascript.js"></script>
+<script src="lib/formatting.js"></script>
+<script src="mode/css/css.js"></script>
+</head>
+<body>
+	<div class="rowContainer">
+		<h3>Upload one or more images:</h3>
+		<div id="uploadFile"><p>Browse</p>
+			<input type="file" id="files" name="file" />
+		</div>
+		<div id="progress_bar"></div><span id="progress"></span>
+	</div>
+	<div class="rowContainer" style="visibility:hidden;">
+		<h3 class="secondStep">Drag tooltips</h3>
+		<div id="radio" style="padding:0 0 20px 0">
+			<label for="radio">Interaction type:</label>
+	        <input type="radio" id="radio1" name="radio" value="hover" checked="checked" /><label for="radio1">Hover</label>
+	        <input type="radio" id="radio2" name="radio" value="click"/><label for="radio2">Click</label>
+	    </div>
+		<div id="iPicture" data-interaction="hover">
+		</div>
+		<div class="buttonSave"><input type="button" value="get code!" class="save" title="get code!"/></div>
+	</div>
+<script>
+jQuery(document).ready(function(){
+    $('.save').button();
+    $('.buttonSave').css('visibility', 'hidden');
+	$( "#radio" ).buttonset();
+	$('input[name=radio]:radio').on('click',function(){
+		$('input[name=radio]:radio').removeAttr('checked');
+		$(this).attr('checked','checked');
+	});
+	$('.button').button();
+	$( "#progress_bar" ).progressbar();
+	var count=1;
+	var progress = document.querySelector('.percent');
+
+	$( "#iPicture" ).iPictureInit({
+		animation: true,
+		animationBg: "bgblack",
+		animationType: "ltr-slide",
+		button: "moreblack"
+	});
+	
+	function errorHandler(evt) {
+	    switch(evt.target.error.code) {
+	      case evt.target.error.NOT_FOUND_ERR:
+	        alert('File Not Found!');
+	        break;
+	      case evt.target.error.NOT_READABLE_ERR:
+	        alert('File is not readable');
+	        break;
+	      case evt.target.error.ABORT_ERR:
+	        break; // noop
+	      default:
+	        alert('An error occurred reading this file.');
+	    };
+	  }
+
+	  function updateProgress(evt) {
+	    // evt is an ProgressEvent.
+	    if (evt.lengthComputable) {
+	      var percentLoaded = Math.round((evt.loaded / evt.total) * 100);
+	      // Increase the progress bar length.
+	      if (percentLoaded < 100) {
+	    	  $( "#progress_bar" ).progressbar( "value" , percentLoaded );
+	    	  $( "#progress" ).html(percentLoaded+'%');
+	      }
+	    }
+	  }
+	  
+	function handleFileSelect(evt) {
+		// Reset progress indicator on new file selection.
+	    var files = evt.target.files; // FileList object
+
+	    // Loop through the FileList and render image files as thumbnails.
+	    for (var i = 0, f; f = files[i]; i++) {
+
+	      // Only process image files.
+	      if (!f.type.match('image.*')) {
+	        continue;
+	      }
+
+	      var reader = new FileReader();
+	      reader.onerror = errorHandler;
+		    reader.onprogress = updateProgress;
+		    reader.onabort = function(e) {
+		      alert('File read cancelled');
+		    };
+			reader.onloadstart = function(e) {
+				$( '#progress').html('0%');
+ 				$( "#progress_bar" ).progressbar( "value" , 0 ).fadeIn();
+			};
+
+	      // Closure to capture the file information.
+			reader.onload = (function(theFile) {
+		        return function(e) {
+		        	// Ensure that the progress bar displays 100% at the end.
+		        $( "#progress" ).html('100%');
+		  	      $( "#progress_bar" ).progressbar( "value" , 100 ).fadeOut();
+		  	      setTimeout("$( '#progress_bar' ).progressbar( 'value', 0).fadeOut();$( '#progress').html('');", 2000);
+		          // Render image.
+		          var span = document.createElement('span');
+		          span.innerHTML = ['<img class="thumb" src="', e.target.result,
+		                            '" title="', escape(theFile.name), '"/>'].join('');
+		          $('<div class="ip_slide" id="ip_slide'+count+'"><img class="ip_tooltipImg" src="'+e.target.result+'" title="'+escape(theFile.name)+'"/></div>').appendTo('#iPicture');
+		          count++;
+		          $( "#iPicture" ).iPictureInit("refresh");
+		          $('.rowContainer').css('visibility', 'visible');
+		        };
+		      })(f);
+
+	      // Read in the image file as a data URL.
+	      reader.readAsDataURL(f);
+	    }
+	  }
+	  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+});
+</script>
+</body>
+</html>

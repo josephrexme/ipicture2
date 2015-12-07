@@ -1,0 +1,27 @@
+{
+  "name": "ipicture2",
+  "description": "iPicture square plugin by justmybit",
+  "main": "index.js",
+  "authors": [
+    "Sara Dalia"
+  ],
+  "license": "GPL",
+  "keywords": [
+    "images",
+    "tooltips",
+    "hover",
+    "label",
+    "items"
+  ],
+  "homepage": "https://github.com/bl4ckdu5t/ipicture2",
+  "moduleType": [
+    "globals"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

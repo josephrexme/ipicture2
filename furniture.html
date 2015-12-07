@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>iPicture first demo</title>
+<link rel="stylesheet" type="text/css" media="screen" href="css/iPicture.css"/>
+<link rel="stylesheet" type="text/css" media="screen" href="css/style.css"/>
+<!-- <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script> -->
+<script type="text/javascript" src="js/zepto.min-1.0.js"></script>
+<!-- <script type="text/javascript" src="js/jquery.ipicture.js"></script> -->
+<script type="text/javascript" src="js/zepto.ipicture.min.js"></script>
+<style type="text/css">
+#iPicture{overflow-x: hidden;
+    overflow-y: auto;}
+#slideshow {
+	position:relative;
+}
+#slideshow #iPicture {
+  margin:0 auto;
+  width:1000px;
+  position:relative;
+  padding-bottom:51px;
+}
+#slideshow #iPicture .slide {
+  margin:0 auto;
+  width:540px; /* reduce by 20 pixels of #iPicture to avoid horizontal scroll */
+  /*height:263px;*/
+}
+
+/** 
+ * Slideshow controls style rules.
+ */
+#pageContainer {
+  margin:0 auto;
+  width: 1000px;
+}
+</style>
+
+<script type="text/javascript">
+window.onload=function(){
+	$( "#iPicture" ).iPicture();
+
+
+  var currentPosition = 0;
+  var slideWidth = 1000;
+  var slides = $('.ip_slide');
+  var numberOfSlides = slides.length;
+
+  // Wrap all .slides with #slideInner div
+  slides
+    .wrapAll('<div id="slideInner"></div>')
+    // Float left to display horizontally, readjust .slides width
+	.css({
+      'float' : 'left',
+      'width' : slideWidth
+    });
+
+  // Set #slideInner width equal to total width of all slides
+  $('#slideInner').css('width', slideWidth * numberOfSlides);
+  // Hide left arrow control on first load
+  manageControls(currentPosition);
+
+  // Create event listeners for .controls clicks
+  $('.control')
+    .bind('click', function(){
+    // Determine new position
+	currentPosition = ($(this).attr('id')=='rightControl') ? currentPosition+1 : currentPosition-1;
+    
+	// Hide / show controls
+    manageControls(currentPosition);
+    // Move slideInner using margin-left
+    $('#slideInner').animate({
+      'marginLeft' : slideWidth*(-currentPosition)
+    });
+    for(i=bullets.length-1; i>=0; i--){
+		bullets[i].className = '';
+		}
+	bullets[currentPosition].className = 'on';
+  });
+
+  // manageControls: Hides and Shows controls depending on currentPosition
+  function manageControls(position){
+    // Hide left arrow if position is first slide
+	if(position==0){ $('#leftControl').hide() } else{ $('#leftControl').show() }
+	// Hide right arrow if position is last slide
+    if(position==numberOfSlides-1){ $('#rightControl').hide() } else{ $('#rightControl').show() }
+  }
+  var bullets = document.getElementById('bullets').getElementsByTagName('li');
+	$('#loadingMsg').css('display','none');
+};
+
+</script>
+
+</head>
+<body>
+	<div id="pageContainer">
+		<div id="slideshow">
+	    	 <div id="iPicture" data-interaction="hover">   
+				<div class="ip_slide">
+					<img class="tooltipImg" src="images/furniture/kitchen2.jpg">
+					<div class="ip_tooltip ip_img32" style="top: 354px; left: 514px;" data-animationtype="ttb-slide" data-button="moreblack" data-tooltipbg="bgblack" data-round="roundBgW">
+						<p></p>
+					</div>
+					<div class="ip_tooltip ip_img32" style="top: 74px; left: 319px;" data-animationtype="ttb-slide" data-button="moreblack" data-tooltipbg="bgblack" data-round="roundBgW">
+						<p></p>
+					</div>
+				</div>
+				<div class="ip_slide">
+					<img class="tooltipImg" src="images/furniture/christmas.jpg">
+					<div class="ip_tooltip ip_img32" style="top: 181px; left: 460px;" data-animationtype="ttb-slide" data-button="moreblack" data-tooltipbg="bgblack" data-round="roundBgW">
+						<p></p>
+					</div>
+					<div class="ip_tooltip ip_img32" style="top: 345px; left: 364px;" data-animationtype="ttb-slide" data-button="moreblack" data-tooltipbg="bgblack" data-round="roundBgW">
+						<p></p>
+					</div>
+				</div>
+				<div class="ip_slide">
+					<img class="tooltipImg" src="images/furniture/bedroom.jpg">
+					<div class="ip_tooltip ip_img32" style="top: 154px; left: 432px;" data-animationtype="ttb-slide" data-button="moreblack" data-tooltipbg="bgblack" data-round="roundBgW">
+						<p></p>
+					</div>
+					<div class="ip_tooltip ip_img32" style="top: 363px; left: 722px;" data-animationtype="ttb-slide" data-button="moreblack" data-tooltipbg="bgblack" data-round="roundBgW">
+						<p></p>
+					</div>
+				</div>
+			</div>
+			<div class="slider_pager_box">
+				<div class="prev_box">
+					<span href="#" class="prev control" id="leftControl"><em>prev</em></span>
+				</div>
+				<ul id="bullets">
+					<li class="on"><em class="hide">1</em></li>
+					<li><em class="hide">2</em></li>
+					<li><em class="hide">3</em></li>
+				</ul>
+				<div class="next_box">
+					<span class="next control" href="#" id="rightControl"><em>next</em></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="loadingMsg" class="page">
+     	<div id="loadingMsgContainer">
+      	<h3>Loading</h3>
+      	<img src="images/loader.gif" />
+     	</div>
+    </div>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=180210495410376";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+OK- non usare span per il contenuto
+OK- non mettere il contenuto dentro il div del pallino ma dopo
+- dividere i js tra plugin e inizializzazione
+OK- l'inizializzazione restituisce html e la descrizione del tooltip non va messa nelle options del plugin
+
+OK- Le picture gliele passo da array opzioni? no ma nell'html direttamente.
+- Controllare tutti i nomi delle classi e degli id che siano specifici di ipicture per non generare conflitti
+- Controllare che esistano dei valori di default e che se li prenda per tutte le possibili customizzazioni del tooltip.
+- customizzare background roundbg
+-uniformare la distanza del tooltip dal pulsante
