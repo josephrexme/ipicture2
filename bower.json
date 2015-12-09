@@ -1,9 +1,10 @@
 {
   "name": "ipicture2",
+  "version": "2.0",
   "description": "iPicture square plugin by justmybit",
   "main": "index.js",
   "authors": [
-    "Sara Dalia"
+    "Sara Dalia", "Joseph Rex"
   ],
   "license": "GPL",
   "keywords": [
