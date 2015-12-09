@@ -254,7 +254,7 @@
 .roundBgW{
 	border-radius: 30px;
 	position: absolute;
-	animation: pulseW 1.5s 1s infinite alternate; 
+	animation: pulseW 1.5s 1s infinite alternate;
 	-moz-animation: pulseW 1.5s 1s infinite alternate; /* Firefox */
 	-webkit-animation: pulseW 1.5s 1s infinite alternate;  /* Safari and Chrome */
 	-o-animation: pulseW 1.5s 1s infinite alternate; /* Opera */
@@ -400,7 +400,7 @@ to {background: rgba(255,255,255, 0.6);}
 .roundBgB{
 	border-radius: 30px;
 	position: absolute;
-	animation: pulse 1.5s 1s infinite alternate; 
+	animation: pulse 1.5s 1s infinite alternate;
 	-moz-animation: pulseB 1.5s 1s infinite alternate; /* Firefox */
 	-webkit-animation: pulseB 1.5s 1s infinite alternate;  /* Safari and Chrome */
 	-o-animation: pulseB 1.5s 1s infinite alternate; /* Opera */
@@ -499,15 +499,15 @@ to {background: rgba(0,0,0, 0.6);}
 /* ###################################################################
 
                           buttons classes
-                          
+
    ################################################################### */
-   
+
 .moregold{
   background: url("../images/moregold/button.png") no-repeat scroll left center transparent;
 }
 .moregrey{
   background: url("../images/moregrey/button.png") no-repeat scroll left center transparent;
-} 
+}
 .moreblack{
   background: url("../images/moreblack/button.png") no-repeat scroll left center transparent;
 }
@@ -516,7 +516,7 @@ to {background: rgba(0,0,0, 0.6);}
 }
 .moreblue{
   background: url("../images/moreblue/button.png") no-repeat scroll left center transparent;
-} 
+}
 .morelightblue{
   background: url("../images/morelightblue/button.png") no-repeat scroll left center transparent;
 }
@@ -525,28 +525,28 @@ to {background: rgba(0,0,0, 0.6);}
 }
 .morewatergreen{
   background: url("../images/morewatergreen/button.png") no-repeat scroll left center transparent;
-} 
+}
 .morelightgreen{
   background: url("../images/morelightgreen/button.png") no-repeat scroll left center transparent;
-} 
+}
 .moregreen{
   background: url("../images/moregreen/button.png") no-repeat scroll left center transparent;
 }
 .moreyellow{
   background: url("../images/moreyellow/button.png") no-repeat scroll left center transparent;
-} 
+}
 .moreorange{
   background: url("../images/moreorange/button.png") no-repeat scroll left center transparent;
-} 
+}
 .morered{
   background: url("../images/morered/button.png") no-repeat scroll left center transparent;
 }
 .morepurple{
   background: url("../images/morepurple/button.png") no-repeat scroll left center transparent;
-} 
+}
 .moreviolet{
   background: url("../images/moreviolet/button.png") no-repeat scroll left center transparent;
-} 
+}
 .morelightviolet{
   background: url("../images/morelightviolet/button.png") no-repeat scroll left center transparent;
 }
@@ -558,7 +558,7 @@ to {background: rgba(0,0,0, 0.6);}
 }
 .beadgrey{
   background: url("../images/beadgrey/button.png") no-repeat scroll left center transparent;
-} 
+}
 .beadblack{
   background: url("../images/beadblack/button.png") no-repeat scroll left center transparent;
 }
@@ -567,7 +567,7 @@ to {background: rgba(0,0,0, 0.6);}
 }
 .beadblue{
   background: url("../images/beadblue/button.png") no-repeat scroll left center transparent;
-} 
+}
 .beadlightblue{
   background: url("../images/beadlightblue/button.png") no-repeat scroll left center transparent;
 }
@@ -576,28 +576,28 @@ to {background: rgba(0,0,0, 0.6);}
 }
 .beadwatergreen{
   background: url("../images/beadwatergreen/button.png") no-repeat scroll left center transparent;
-} 
+}
 .beadlightgreen{
   background: url("../images/beadlightgreen/button.png") no-repeat scroll left center transparent;
-} 
+}
 .beadgreen{
   background: url("../images/beadgreen/button.png") no-repeat scroll left center transparent;
 }
 .beadyellow{
   background: url("../images/beadyellow/button.png") no-repeat scroll left center transparent;
-} 
+}
 .beadorange{
   background: url("../images/beadorange/button.png") no-repeat scroll left center transparent;
-} 
+}
 .beadred{
   background: url("../images/beadred/button.png") no-repeat scroll left center transparent;
 }
 .beadpurple{
   background: url("../images/beadpurple/button.png") no-repeat scroll left center transparent;
-} 
+}
 .beadviolet{
   background: url("../images/beadviolet/button.png") no-repeat scroll left center transparent;
-} 
+}
 .beadlightviolet{
   background: url("../images/beadlightviolet/button.png") no-repeat scroll left center transparent;
 }
@@ -605,17 +605,17 @@ to {background: rgba(0,0,0, 0.6);}
   background: url("../images/beadfucsia/button.png") no-repeat scroll left center transparent;
 }
 .ipic-orange{
-background-image: linear-gradient(bottom, rgb(241,152,55) 8%, rgb(255,183,83) 54%);
-background-image: -o-linear-gradient(bottom, rgb(241,152,55) 8%, rgb(255,183,83) 54%);
-background-image: -moz-linear-gradient(bottom, rgb(241,152,55) 8%, rgb(255,183,83) 54%);
-background-image: -webkit-linear-gradient(bottom, rgb(241,152,55) 8%, rgb(255,183,83) 54%);
-background-image: -ms-linear-gradient(bottom, rgb(241,152,55) 8%, rgb(255,183,83) 54%);
+	background-image: linear-gradient(to top, rgb(241,152,55) 8%, rgb(255,183,83) 54%);
+	background-image: -o-linear-gradient(to top, rgb(241,152,55) 8%, rgb(255,183,83) 54%);
+	background-image: -moz-linear-gradient(to top, rgb(241,152,55) 8%, rgb(255,183,83) 54%);
+	background-image: -webkit-linear-gradient(to top, rgb(241,152,55) 8%, rgb(255,183,83) 54%);
+	background-image: -ms-linear-gradient(to top, rgb(241,152,55) 8%, rgb(255,183,83) 54%);
 
-background-image: -webkit-gradient(
-	linear,
-	left bottom,
-	left top,
-	color-stop(0.08, rgb(241,152,55)),
-	color-stop(0.54, rgb(255,183,83))
-);
+	background-image: -webkit-gradient(
+		linear,
+		left to top,
+		left to bottom,
+		color-stop(0.08, rgb(241,152,55)),
+		color-stop(0.54, rgb(255,183,83))
+	);
 	}
